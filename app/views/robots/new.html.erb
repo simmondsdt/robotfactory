@@ -1,2 +1,6 @@
-<h1>Robots#new</h1>
-<p>Find me in app/views/robots/new.html.erb</p>
+<div class='container'>
+<h2>New Robot for Inventor# <%= @inventor[:id] %> <%= @inventor.name %> </h2>
+  <div class='row'>
+    <%= render 'form' %>
+  </div>
+</div>

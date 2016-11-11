@@ -4,7 +4,7 @@ class CreateParts < ActiveRecord::Migration[5.0]
       t.string :name
       t.integer :number
       t.string :robot
-      t.string :belongs_to
+      t.belongs_to :robot, foreign_key: true
 
       t.timestamps
     end

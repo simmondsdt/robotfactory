@@ -1,2 +1,24 @@
-<h1>Robots#show</h1>
-<p>Find me in app/views/robots/show.html.erb</p>
+<div class='center'>
+  <h1><%= @robot.name %></h1>
+
+  <% div_color= @robot.evil ? 'red' : 'green' %>
+    <div class='<%= div_color %>'>
+      <i>Serial Number: <%= @robot.serial_number %></i>
+        <br />
+      <strong> Evil: <%= @robot.evil ? 'Yes' : 'Nope!' %> </strong>
+        <br />
+      <strong> Color: <%= @robot.color %> </strong>
+        <br />
+      <strong> Industry: <%= @robot.industry.titleize %> </strong>
+        <br />
+    </div>
+    <br />
+</div>
+
+<div class="row">
+  <div class="col s12 center">
+    <%= link_to 'Show Parts', robot_parts_path(@robot), class: 'btn blue' %>
+      <br />
+    <%= link_to 'Back to Robots', inventor_path(@inventor), class: 'btn black white-text' %>
+  </div>
+</div>

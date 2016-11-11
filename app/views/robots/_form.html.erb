@@ -1,0 +1,29 @@
+<%= form_for [@inventor, @robot] do |f| %>
+  <div class='col m4'>
+    <%= f.label :name %>
+    <%= f.text_field :name, required: true %>
+  </div>
+  <div class='col m4'>
+    <%= f.label :serial_number %>
+    <%= f.text_field :serial_number %>
+  </div>
+  <div class='col m4'>
+    <%= f.label :color %>
+    <%= f.text_field :color %>
+  </div>
+  <div class='input-field col s12 m6'>
+    <%= f.label :evil %>
+    <br />
+    <%= f.select :evil, ['true', 'false'] %>
+    <br />
+  </div>
+  <div class='input-field col s12 m6'>
+    <%= f.label :industry %>
+    <br />
+    <%= f.select :industry, ['education', 'war', 'service', 'novelty'] %>
+    <br />
+  </div>
+  <div class='center'>
+    <%= f.submit class: 'btn black white-text' %>
+  </div>
+<% end %>

@@ -28,9 +28,10 @@ ActiveRecord::Schema.define(version: 20161110164517) do
     t.string   "name"
     t.integer  "number"
     t.string   "robot"
-    t.string   "belongs_to"
+    t.integer  "robot_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["robot_id"], name: "index_parts_on_robot_id", using: :btree
   end
 
   create_table "robots", force: :cascade do |t|
@@ -45,5 +46,6 @@ ActiveRecord::Schema.define(version: 20161110164517) do
     t.index ["inventor_id"], name: "index_robots_on_inventor_id", using: :btree
   end
 
+  add_foreign_key "parts", "robots"
   add_foreign_key "robots", "inventors"
 end
